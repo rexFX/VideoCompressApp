@@ -12,7 +12,6 @@ interface Props {
 const MainLogic: React.FC<Props> = ({ darkMode }) => {
   const theme = useTheme();
   const [video, setVideo] = useState<ImagePicker.ImagePickerResult>(null);
-  const [progress, setProgress] = useState<number>(0);
 
   const videoRemover = () => {
     setVideo(null);
@@ -25,7 +24,6 @@ const MainLogic: React.FC<Props> = ({ darkMode }) => {
     });
 
     if (!result.canceled) {
-      console.log(result);
       setVideo(result);
     }
   };
@@ -59,7 +57,7 @@ const MainLogic: React.FC<Props> = ({ darkMode }) => {
             marginBottom: 40,
           }}
           onPress={pickVideo}>
-          <Text>Select Video</Text>
+          <Text style={{ fontFamily: 'Poppins_400Regular' }}>Select Video</Text>
         </TouchableRipple>
       )}
     </View>

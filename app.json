@@ -15,19 +15,39 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rexfx.VideoCompressApp",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos",
+        "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "blockedPermissions": [
+        "CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.rexfx.VideoCompressApp",
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "react-native-compressor"
-    ]
+      "react-native-compressor",
+      "expo-media-library"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "956a6b3a-1360-44df-a660-42385bed7455"
+      }
+    }
   }
 }
