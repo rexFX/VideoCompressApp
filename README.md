@@ -1,6 +1,6 @@
 # Video Compression App
 
-- Built using `React Native with Expo`
+- Built using `React Native with Expo and TypeScript`
 - Used:
   - `react-native-paper` for theming
   - `expo-av` for video playback
