@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.rexfx.VideoCompressApp",
@@ -27,23 +25,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "blockedPermissions": [
-        "CAMERA",
-        "android.permission.RECORD_AUDIO"
-      ],
+      "blockedPermissions": ["CAMERA", "android.permission.RECORD_AUDIO"],
       "package": "com.rexfx.VideoCompressApp",
-      "permissions": [
-        "android.permission.READ_EXTERNAL_STORAGE",
-        "android.permission.WRITE_EXTERNAL_STORAGE"
-      ]
+      "permissions": ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "react-native-compressor",
-      "expo-media-library"
-    ],
+    "plugins": ["react-native-compressor", "expo-media-library"],
     "extra": {
       "eas": {
         "projectId": "956a6b3a-1360-44df-a660-42385bed7455"
