@@ -142,7 +142,15 @@ const VideoPlayer: React.FC<Props> = ({ videoRemover, videoFile }) => {
               }}>
               <Text style={{ fontFamily: 'Poppins_400Regular' }}>{status.isPlaying ? 'Pause' : 'Play'}</Text>
             </Button>
-            <Button mode="elevated" icon="trash-can-outline" onPress={videoRemover}>
+            <Button
+              mode="elevated"
+              icon="trash-can-outline"
+              onPress={() => {
+                if (cancellationID.length > 0) {
+                  Video.cancelCompression(cancellationID);
+                }
+                videoRemover();
+              }}>
               <Text style={{ fontFamily: 'Poppins_400Regular' }}>Remove</Text>
             </Button>
             <Button mode="elevated" icon={start ? 'stop' : 'rocket'} onPress={compressionHandler}>

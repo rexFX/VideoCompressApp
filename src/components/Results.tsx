@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 import * as MediaLibrary from 'expo-media-library';

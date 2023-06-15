@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Text, Button, useTheme, TouchableRipple } from 'react-native-paper';
 import { View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { Video, ResizeMode } from 'expo-av';
 import VideoPlayer from './components/VideoPlayer';
+import { deleteAsync } from 'expo-file-system';
 
 interface Props {
   darkMode: boolean;
@@ -13,7 +13,8 @@ const MainLogic: React.FC<Props> = ({ darkMode }) => {
   const theme = useTheme();
   const [video, setVideo] = useState<ImagePicker.ImagePickerResult>(null);
 
-  const videoRemover = () => {
+  const videoRemover = async () => {
+    await deleteAsync(video.assets[0].uri, { idempotent: true });
     setVideo(null);
   };
 
